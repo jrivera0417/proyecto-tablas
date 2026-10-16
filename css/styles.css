@@ -1,0 +1,323 @@
+
+/* ESTILOS GENERALES */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: #f1f4f9;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #263248;
+}
+
+/* CONTENEDOR PRINCIPAL */
+main {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 6px 24px rgba(31, 45, 61, 0.08);
+}
+
+/* TABLA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Título de la tabla */
+caption {
+    text-align: left;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    padding-bottom: 18px;
+}
+
+/* Celdas */
+th, td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e1e7f0;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+/* Encabezado */
+thead th {
+    background-color: #263f75;
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* Filas alternas */
+tbody tr:nth-child(even) {
+    background-color: #f3f6fc;
+}
+
+/* Efecto al pasar el cursor */
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #fff0b3;
+}
+
+/* Última fila sin borde inferior */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* NÚMEROS */
+.numero {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ADAPTACIÓN A CELULARES */
+@media (max-width: 600px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    main {
+        margin: 15px auto;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    caption {
+        font-size: 1.2rem;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+}
+
+/* BOTÓN PARA VER EL HORARIO */
+.navegacion-horario {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid #e1e7f0;
+}
+
+.btn-horario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 24px;
+    background-color: #263f75;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(38, 63, 117, 0.2);
+    transition: background-color 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+/* Efecto al pasar el cursor */
+.btn-horario:hover {
+    background-color: #1b2f59;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(38, 63, 117, 0.3);
+}
+
+/* Efecto al presionar */
+.btn-horario:active {
+    transform: translateY(0);
+}
+
+/* Accesibilidad con teclado */
+.btn-horario:focus-visible {
+    outline: 3px solid #8daeff;
+    outline-offset: 4px;
+}
+
+/* Adaptación a celulares */
+@media (max-width: 600px) {
+    .btn-horario {
+        width: 100%;
+        padding: 13px 18px;
+        text-align: center;
+    }
+}
+
+
+/* ESTILO DE Horario.html */
+.horario {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #212529;
+    padding: 20px;
+    background-color: #f4f6f9;
+}
+
+/* Contenedor adaptable para celulares */
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 8px;
+}
+
+/* TABLA */
+.horario table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+}
+
+/* Bordes y espacio interno de las celdas */
+.horario th,
+.horario td {
+    border: 1px solid #ced4da;
+    padding: 12px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.5;
+}
+
+/* TÍTULO DE LA TABLA */
+.horario caption {
+    caption-side: top;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #212529;
+    padding: 15px 0;
+}
+
+/* ENCABEZADO DE LOS DÍAS */
+.horario thead th {
+    background-color: #212f3d;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 15px 12px;
+
+    /* Encabezado fijo al desplazarse */
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+/* COLUMNA DE LAS HORAS */
+.horario tbody th {
+    background-color: #e9ecef;
+    color: #343a40;
+    font-size: 0.85rem;
+    font-weight: bold;
+    white-space: nowrap;
+    min-width: 110px;
+}
+
+/* COLORES DE LOS TIPOS DE CLASE */
+
+/* Clases técnicas */
+.horario td.tecnica {
+    background-color: #dbeafe;
+    color: #1e3a8a;
+}
+
+/* Clases transversales */
+.horario td.transversal {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+/* Proyecto formativo */
+.horario td.proyecto {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+/* Tiempo libre y autoaprendizaje */
+.horario td.libre {
+    background-color: #ede9fe;
+    color: #5b21b6;
+}
+
+/* AMBIENTES */
+.horario .ambiente {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.78rem;
+    font-weight: normal;
+    color: #6c757d;
+}
+
+/* DESCANSO Y ALMUERZO */
+.horario tr.pausa th,
+.horario tr.pausa td {
+    background-color: #e9ecef;
+    color: #495057;
+    text-align: center;
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+.horario tbody td.tecnica:hover,
+.horario tbody td.transversal:hover,
+.horario tbody td.proyecto:hover,
+.horario tbody td.libre:hover {
+    filter: brightness(0.94);
+    cursor: pointer;
+    transition: filter 0.2s ease;
+}
+
+/* PIE DE LA TABLA */
+.horario tfoot td {
+    background-color: #212f3d;
+    color: #ffffff;
+    font-size: 0.8rem;
+    text-align: right;
+    padding: 12px;
+}
+
+/* ADAPTACIÓN A CELULARES */
+@media screen and (max-width: 600px) {
+    .horario {
+        padding: 10px;
+    }
+
+    .horario caption {
+        font-size: 1.15rem;
+        padding: 10px 0;
+    }
+
+    .horario th,
+    .horario td {
+        padding: 9px;
+        font-size: 0.85rem;
+    }
+
+    .horario tbody th {
+        font-size: 0.75rem;
+    }
+
+    .horario .ambiente {
+        font-size: 0.7rem;
+    }
+}
